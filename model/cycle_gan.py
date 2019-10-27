@@ -55,7 +55,7 @@ content_path = './data/content_images'
 
 style_path = './data/anime_faces'
 
-written = True
+written = False
 
 if written == False:
 
@@ -238,12 +238,12 @@ for epoch in range(EPOCHS):
     start = time.time()
 
     n = 0
-    for image_x, image_y in zip(content_images, style_images):
+    for image_x, image_y in zip(content_images[:100], style_images):
         tf.cast(image_x, 'float32')
         tf.cast(image_y, 'float32')
         train_step(image_x, image_y)
         if n % 10 == 0:
-            print('.', end='')
+            print('.')
         n += 1
 
 
