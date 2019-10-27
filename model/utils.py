@@ -14,7 +14,7 @@ def load_images(path):
             except OSError:
                 continue
             images.append([img])
-            if i == 10000:
+            if i == 2000:
                 break
             i += 1
     return np.array(images)
